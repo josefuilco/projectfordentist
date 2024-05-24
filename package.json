@@ -1,0 +1,37 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Proyecto de tesis del Odontologo",
+  "main": "app.ts",
+  "scripts": {
+    "dev": "ts-node-dev ./src/app.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --env-file=.env ./dist/app.js",
+    "build:start": "tsc && node --env-file=.env ./dist/app.js",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "Jose Fuilco",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.7",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/node": "^20.12.7",
+    "@types/nodemailer": "^6.4.15",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "docxtemplater": "^3.47.2",
+    "express": "^4.19.2",
+    "googleapis": "^137.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.9.7",
+    "nodemailer": "^6.9.13",
+    "pizzip": "^3.1.7"
+  }
+}
