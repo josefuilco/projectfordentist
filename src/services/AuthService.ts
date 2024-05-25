@@ -23,11 +23,10 @@ export async function authorize(currentEmail: string, currentPassword: string) {
 // Servicio para registrar a los usuarios
 export async function register(userData: User) {
   const result = await repository.createContent(userData);
-  if (result[0]) {
-    console.log(result[0]);
+  if (result) {
     return result;
   } else {
-    throw { msg_auth: "No registrado: " };
+    throw new Error("Error al ingresar los datos.");
   }
 }
 

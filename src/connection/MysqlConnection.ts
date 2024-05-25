@@ -70,7 +70,7 @@ class MysqlConnection implements IConnection {
       return QueryResult as any;
     } catch (error) {
       console.error({ msg: error });
-      return [];
+      return undefined;
     }
   }
 }

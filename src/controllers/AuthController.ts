@@ -36,7 +36,7 @@ class AuthController {
       await register(user);
       res.status(200).json({ register: true });
     } catch (error) {
-      res.status(500).json({ register: error });
+      res.status(500).json({ register: false });
     }
   }
 

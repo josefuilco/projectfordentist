@@ -13,7 +13,7 @@ const userRepository = new UserRepository(connection);
 
 export async function printDocument(idProject: string, idUser: string) {
   const content = fs.readFileSync(
-    path.resolve(__dirname, "../static/template_tesis_cuantitativa.docx"),
+    path.resolve(__dirname, "../../static/template_tesis_cuantitativa.docx"),
     "binary"
   );
   const zip = new PizZip(content);
