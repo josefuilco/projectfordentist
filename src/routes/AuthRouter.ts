@@ -20,6 +20,6 @@ AuthRouter.get("/auth/cerrar-sesion", useToken, authController.closeUser);
 AuthRouter.post("/auth/recuperar", authController.recoverByEmail);
 
 // Cambiar contraseña
-AuthRouter.post("auth/cambiar-contrasena/:id", authController.changePassword);
+AuthRouter.post("auth/ChangePassword/:id", authController.changePassword);
 
 export default AuthRouter;
