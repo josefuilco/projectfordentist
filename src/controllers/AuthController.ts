@@ -15,6 +15,7 @@ class AuthController {
     try {
       const { email, password, state } = req.body;
       const token = await authorize(email, password);
+      console.log(`El usuario: ${email} inicio sesion.`);
       if (state) {
         res.cookie("token", token, {
           httpOnly: true, // Solo ser leido por  el servidor

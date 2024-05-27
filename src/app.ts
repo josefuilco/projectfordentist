@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3000;
 app.use(
   cors({
     // origin: ["https://projectfordentist.com", "http://192.168.194.2:5173"],
-    origin: true,
+    origin: "http://192.168.200.9:5173",
     credentials: true,
   })
 );
@@ -24,6 +24,11 @@ app.use(express.urlencoded({ extended: false }));
 
 // Middleware para la llave privada
 app.use(usePrivateKey);
+app.use((_req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "http://192.168.200.9:5173");
+  res.header("Access-Control-Allow-Credentials", "true");
+  next();
+});
 
 // Routers
 app.use("/api", AuthRouter);
