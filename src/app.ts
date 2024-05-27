@@ -13,8 +13,7 @@ const PORT = process.env.PORT || 3000;
 // Configuration Middlewares
 app.use(
   cors({
-    // origin: ["https://projectfordentist.com", "http://192.168.194.2:5173"],
-    origin: "http://192.168.200.9:5173",
+    origin: ["https://projectfordentist.com", "http://localhost:5173"],
     credentials: true,
   })
 );
@@ -24,8 +23,17 @@ app.use(express.urlencoded({ extended: false }));
 
 // Middleware para la llave privada
 app.use(usePrivateKey);
-app.use((_req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "http://192.168.200.9:5173");
+app.use((req, res, next) => {
+  const allowedOrigins = [
+    "https://projectfordentist.com",
+    "http://localhost:5173",
+  ];
+  const origin = req.headers.origin;
+  console.log(`Origen: ${origin}`);
+  // Verificar si el origen de la solicitud está permitido
+  if (allowedOrigins.includes(origin as string)) {
+    res.setHeader("Access-Control-Allow-Origin", origin as string);
+  }
   res.header("Access-Control-Allow-Credentials", "true");
   next();
 });
