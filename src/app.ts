@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3000;
 // Configuration Middlewares
 app.use(
   cors({
-    origin: ["https://projectfordentist.com", "http://192.168.194.2:5173"],
+    // origin: ["https://projectfordentist.com", "http://192.168.194.2:5173"],
     credentials: true,
   })
 );
