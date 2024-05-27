@@ -69,7 +69,7 @@ export async function sendMail(email: string) {
     from: EMAIL,
     to: email,
     subject: "¡Recupera tu cuenta de ProjectForDentist!",
-    text: `Recupera tu cuenta en: www.projectfordentist.com/recuperar-cuenta/${idUser}`,
+    text: `Recupera tu cuenta en: www.projectfordentist.com/ChangePassword/${idUser}`,
   };
 
   // Este es el que se encarga de enviar al Email
