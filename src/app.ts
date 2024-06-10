@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3000;
 // Configuration Middlewares
 app.use(
   cors({
-    origin: ["https://projectfordentist.com", "http://localhost:5173"],
+    origin: ["https://projectfordentists.com", "http://localhost:5173"],
     credentials: true,
   })
 );
@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(usePrivateKey);
 app.use((req, res, next) => {
   const allowedOrigins = [
-    "https://projectfordentist.com",
+    "https://projectfordentists.com",
     "http://localhost:5173",
   ];
   const origin = req.headers.origin;
