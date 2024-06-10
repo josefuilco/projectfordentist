@@ -51,7 +51,11 @@ class AuthController {
     try {
       const idUser = (req as UserRequest).user;
       if (idUser) {
-        res.clearCookie("token");
+        res.clearCookie("token", {
+          sameSite: "none",
+          secure: true,
+          httpOnly: true,
+        });
       } else throw "Usuario → Sin sesion pendiente";
       res.status(200).json({ msg: "Sesion Cerrada." });
     } catch (error) {

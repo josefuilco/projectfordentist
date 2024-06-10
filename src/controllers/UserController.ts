@@ -41,7 +41,11 @@ class UserController {
     try {
       const idUser = (req as UserRequest).user;
       const response = await service.deleteUser(idUser as string);
-      res.clearCookie("token");
+      res.clearCookie("token", {
+        sameSite: "none",
+        secure: true,
+        httpOnly: true,
+      });
       res.status(200).json({ success: true, user: response });
     } catch (error) {
       res.status(401).json({ msg: error });
