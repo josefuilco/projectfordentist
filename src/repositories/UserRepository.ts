@@ -105,7 +105,7 @@ class UserRepository implements IRepository<User> {
       const detailQuery = "DELETE FROM ProjectDetail WHERE IdUser = ?;";
       const detailResult = await this.connection.doQuery(detailQuery, [idUser]);
       // Eliminamos el Proyecto
-      const projectQuery = "DELETE FROM Project WHERE IdUser = ?;";
+      const projectQuery = "DELETE FROM Projects WHERE IdUser = ?;";
       const projectResult = await this.connection.doQuery(projectQuery, [
         idUser,
       ]);
