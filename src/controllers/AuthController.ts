@@ -21,9 +21,14 @@ class AuthController {
           httpOnly: true, // Solo ser leido por  el servidor
           maxAge: 24 * 60 * 60 * 1000, // 24 Horas
           sameSite: "none",
+          secure: true,
         });
       } else {
-        res.cookie("token", token, { httpOnly: true, sameSite: "none" });
+        res.cookie("token", token, {
+          httpOnly: true,
+          sameSite: "none",
+          secure: true,
+        });
       }
       res.status(200).json({ access: true });
     } catch (error) {
